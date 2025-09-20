@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard</title>
+  <link rel="icon" href="360_F_169764523_7ysH07dmxLZmN0yHcZFWwrFXrxWckEMh-removebg-preview.png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      text-decoration: none;
+    }
+
+    body {
+      display: flex;
+      min-height: 100vh;
+      background: #f4f6f9;
+      overflow-x: hidden;
+    }
+
+  
+    .sidebar {
+      width: 220px;
+      background: #111;
+      color: #fff;
+      padding-top: 20px;
+      transition: all 0.3s ease;
+      position: fixed;
+      height: 100%;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar ul li {
+      padding: 15px 20px;
+      cursor: pointer;
+      border-left: 4px solid transparent;
+      transition: 0.3s;
+    }
+
+    .sidebar ul li:hover {
+      background: #333;
+      border-left: 4px solid #4db8ff;
+    }
+
+    .main {
+      margin-left: 220px;
+      flex: 1;
+      padding: 20px;
+      animation: slideIn 0.6s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .header {
+      background: #fff;
+      padding: 15px 25px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      height: 150px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #666;
+    }
+    a{
+        color: white;
+    }
+    .card a{
+      color: black
+    }
+
+    
+    @media (max-width: 1024px) {
+      .main {
+        margin-left: 180px;
+      }
+
+      .sidebar {
+        width: 180px;
+      }
+
+      .sidebar h2 {
+        font-size: 20px;
+      }
+
+      .sidebar ul li {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+
+      .sidebar h2 {
+        display: none;
+      }
+
+      .sidebar ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+      }
+
+      .sidebar ul li {
+        border: none;
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 15px;
+      }
+
+      .header {
+        font-size: 20px;
+        padding: 12px 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card h3 {
+        font-size: 16px;
+      }
+
+      .card p {
+        font-size: 12px;
+      }
+
+      .sidebar ul li {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Admin</h2>
+    <ul>
+      <li>Dashboard</li>
+      <li><a href="">Patient list</a></li>
+      <li><a href="">Doctors list</a></li>
+      <li><a href="">View report</a></li>
+      <li><a href="">Log out</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="header">Dashboard</div>
+    <div class="cards">
+      <div class="card">
+        <a href="">Patient list</a>
+        <p>1,250 active users</p>
+      </div>
+      <div class="card">
+        <a href="">Doctors list</a>
+        <p>50 Doctors</p>
+      </div>
+      <div class="card">
+        <a href="">View report</a>
+        <p>320 new report</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
